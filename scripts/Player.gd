@@ -3,7 +3,7 @@ extends CharacterBody3D
 #these variables are for mouselook
 
 #this variable is the speed amount.
-@export var speed = 3.0
+@export var speed = 10.0
 
 #this sets the speed of your crouch.
 @export var crouch_speed = 1.0
@@ -35,7 +35,7 @@ extends CharacterBody3D
 @onready var collision_shape = $CollisionShape3D
 
 #this variable is for the TopCast Node3D
-@onready var top_cast = $TopCast
+#@onready var top_cast = $TopCast
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -49,7 +49,7 @@ var stand_height : float
 #variables for mouselook end here.
 
 #the speed of you
-const SPEED = 1.0
+const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 
 #this function is called ready and it will create a state of ready.
@@ -64,7 +64,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	elif Input.is_action_pressed("crouch") or top_cast.is_colliding():
+	elif Input.is_action_pressed("crouch"):
 		move_speed = crouch_speed
 		crouch(delta)
 	else:

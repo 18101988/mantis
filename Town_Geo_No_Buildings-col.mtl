@@ -1,0 +1,12 @@
+# Blender 4.1.0 MTL File: 'Town_Geo_No_Buildings.blend'
+# www.blender.org
+
+newmtl Material.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd G:/My Drive/Mantis/Design Bible/Setting and Building Details/Reference Images/Maps/Town_Of_Mantis_New_Map_2024_draft_1.png
