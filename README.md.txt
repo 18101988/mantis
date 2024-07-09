@@ -1,1 +1,1 @@
-THis is where all code and assets for the game Mantis will go. No more, no less.
+Welcome to hell. i have haxed ur repo.
