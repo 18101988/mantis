@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://sb245rbgw657"]
+
+[ext_resource type="Script" path="res://item/item_data.gd" id="1_yk6ad"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gul7s"]
+load_path = "res://.godot/imported/#1 - Transparent Icons.png-cfb162c63d075773953986fd2d2afadb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6fir"]
+atlas = SubResource("CompressedTexture2D_gul7s")
+region = Rect2(0, 416, 32, 32)
+
+[resource]
+script = ExtResource("1_yk6ad")
+name = "Blue Book"
+description = "It's a Blue Book."
+stackable = false
+texture = SubResource("AtlasTexture_g6fir")

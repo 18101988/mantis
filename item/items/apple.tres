@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cavmh7t8ib2kv"]
+
+[ext_resource type="Script" path="res://item/item_data.gd" id="1_vjrhu"]
+[ext_resource type="Texture2D" uid="uid://cr2e7ggvieevv" path="res://item/item_atlas.tres" id="2_55qob"]
+
+[resource]
+script = ExtResource("1_vjrhu")
+name = "Apple"
+description = "A tasty apple."
+stackable = true
+texture = ExtResource("2_55qob")
