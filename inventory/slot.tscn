@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://kbwnso5ljwur" path="res://Untitled.png" id="1_onoje"]
 
 [node name="Slot" type="PanelContainer"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(16, 16)
 offset_right = 40.0
 offset_bottom = 40.0
 

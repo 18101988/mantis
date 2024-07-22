@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4mo58de1neb4"]
+[gd_scene load_steps=27 format=3 uid="uid://b4mo58de1neb4"]
 
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="1_bofed"]
 [ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="1_fd65f"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b2wcijdhj3uvx" path="res://assets/BuildingsExt/PowerPlant/PowerPlant.glb" id="15_vfrdk"]
 [ext_resource type="PackedScene" uid="uid://bg5frntbe6e8b" path="res://assets/BuildingsExt/School/school.glb" id="16_1ax3r"]
 [ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="17_odcw8"]
+[ext_resource type="PackedScene" uid="uid://bmbxq4mgofix2" path="res://inventory/inventory.tscn" id="21_htwa7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwhsh"]
 panorama = ExtResource("1_fd65f")
@@ -39,7 +40,7 @@ glow_enabled = true
 radius = 0.695951
 height = 1.99195
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node"]
 
 [node name="BuildingsExt" type="Node3D" parent="."]
 
@@ -151,3 +152,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012569, 2.19074, -0.002877
 
 [node name="Camera3D" type="Camera3D" parent="Player/Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 0.999965, -0.00834256, 0, 0.00834256, 0.999965, 0.0302811, 0.944549, -0.0916977)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("21_htwa7")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
