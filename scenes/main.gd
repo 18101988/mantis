@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player: CharacterBody3D = $Player/Player
+@onready var player: CharacterBody3D = $Player
 @onready var inventory_interface: Control = $UI/InventoryInterface
 
 func _ready() -> void:
