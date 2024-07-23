@@ -8,4 +8,5 @@ script = ExtResource("1_vjrhu")
 name = "Apple"
 description = "A tasty apple."
 stackable = true
+consumable = false
 texture = ExtResource("2_55qob")

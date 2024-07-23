@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://b4mo58de1neb4"]
+[gd_scene load_steps=29 format=3 uid="uid://b4mo58de1neb4"]
 
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="1_bofed"]
 [ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="1_fd65f"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_wyxof"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_juqn7"]
 [ext_resource type="PackedScene" uid="uid://pq77nrud3d6o" path="res://assets/BuildingsExt/Grocery/GroceryStore_complex_no_collision.glb" id="3_3oydt"]
 [ext_resource type="PackedScene" uid="uid://c86eijf03jm1p" path="res://assets/Geography/Town_Geo_No_Buildings.glb" id="3_qqkgs"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5frntbe6e8b" path="res://assets/BuildingsExt/School/school.glb" id="16_1ax3r"]
 [ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="17_odcw8"]
 [ext_resource type="PackedScene" uid="uid://bmbxq4mgofix2" path="res://inventory/inventory.tscn" id="21_htwa7"]
+[ext_resource type="Script" path="res://inventory/inventory_interface.gd" id="23_1egjx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwhsh"]
 panorama = ExtResource("1_fd65f")
@@ -41,6 +43,7 @@ radius = 0.695951
 height = 1.99195
 
 [node name="World" type="Node"]
+script = ExtResource("1_wyxof")
 
 [node name="BuildingsExt" type="Node3D" parent="."]
 
@@ -162,6 +165,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("23_1egjx")
 
 [node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("21_htwa7")]
 layout_mode = 0
