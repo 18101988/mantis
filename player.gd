@@ -1,25 +1,29 @@
 extends CharacterBody3D
 
 @export var inventory_data: InventoryData
- 
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
  
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
- 
-@onready var camera: Camera3D = $Camera3D
- 
-func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
- 
- 
-func _unhandled_input(event: InputEvent) -> void:
+
+var look_rot: Vector2
+
+@onready var head: Camera3D = $Camera3D
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+#this function is used for when taking in the mouses cursor location and translating
+#those coordinates to be useful(?) 
+func _input(event):
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * .005)
-		camera.rotate_x(-event.relative.y * .005)
-		camera.rotation.x = clamp(camera.rotation.x, -PI/4, PI/4)
- 
+		look_rot.y -= (event.relative.x * 0.2)
+		look_rot.x -= (event.relative.y * 0.2)
+		look_rot.x = clamp(look_rot.x, -80, 90)
+
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
  
@@ -45,3 +49,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
  
 	move_and_slide()
+
+	var plat_rot = get_platform_angular_velocity()
+	look_rot.y += rad_to_deg(plat_rot.y * delta)
+	head.rotation_degrees.x = look_rot.x
+	rotation_degrees.y = look_rot.y
