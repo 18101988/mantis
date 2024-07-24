@@ -19,18 +19,31 @@ func _ready():
 
 #this function is used for when taking in the mouses cursor location and translating
 #those coordinates to be useful(?) 
-func _input(event):
-	if event is InputEventMouseMotion and !Input.is_action_just_pressed("inventory"):
+
+#func _input(event): #this is a function. 
+#	if event is InputEventMouseMotion and free_mouse_cursor == 0: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
+#		look_rot.y -= (event.relative.x * 0.2)
+#		look_rot.x -= (event.relative.y * 0.2)
+#		look_rot.x = clamp(look_rot.x, -80, 90)
+		
+
+func _unhandled_input(event):
+	
+	var free_mouse_cursor = 0
+	
+	if event is InputEventMouseMotion and free_mouse_cursor == 0: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
 		look_rot.y -= (event.relative.x * 0.2)
 		look_rot.x -= (event.relative.y * 0.2)
 		look_rot.x = clamp(look_rot.x, -80, 90)
-
-func _unhandled_input(_event):
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 		
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
+		free_mouse_cursor = 1
+	elif Input.is_action_pressed("inventory") and free_mouse_cursor == 1:
+		free_mouse_cursor = 0
  
  
 func _physics_process(delta: float) -> void:
@@ -54,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
  
 	move_and_slide()
-
+	
 	var plat_rot = get_platform_angular_velocity()
 	look_rot.y += rad_to_deg(plat_rot.y * delta)
 	head.rotation_degrees.x = look_rot.x
