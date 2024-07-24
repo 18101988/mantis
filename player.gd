@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal toggle_inventory()
+
 @export var inventory_data: InventoryData
 
 const SPEED = 5.0
@@ -18,7 +20,7 @@ func _ready():
 #this function is used for when taking in the mouses cursor location and translating
 #those coordinates to be useful(?) 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !Input.is_action_just_pressed("inventory"):
 		look_rot.y -= (event.relative.x * 0.2)
 		look_rot.x -= (event.relative.y * 0.2)
 		look_rot.x = clamp(look_rot.x, -80, 90)
@@ -26,6 +28,9 @@ func _input(event):
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
+		
+	if Input.is_action_just_pressed("inventory"):
+		toggle_inventory.emit()
  
  
 func _physics_process(delta: float) -> void:
