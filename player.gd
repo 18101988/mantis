@@ -25,7 +25,6 @@ func _ready():
 #		look_rot.y -= (event.relative.x * 0.2)
 #		look_rot.x -= (event.relative.y * 0.2)
 #		look_rot.x = clamp(look_rot.x, -80, 90)
-		
 
 func _unhandled_input(event):
 	
@@ -44,7 +43,6 @@ func _unhandled_input(event):
 		free_mouse_cursor = 1
 	elif Input.is_action_pressed("inventory") and free_mouse_cursor == 1:
 		free_mouse_cursor = 0
- 
  
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
