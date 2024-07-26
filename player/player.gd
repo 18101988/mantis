@@ -3,6 +3,7 @@ extends CharacterBody3D
 signal toggle_inventory()
 
 @export var inventory_data: InventoryData
+@export var equip_inventory_data: InventoryDataEquip
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
