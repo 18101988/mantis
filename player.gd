@@ -53,6 +53,10 @@ func interact() -> void:
 	if interact_ray.is_colliding():
 		interact_ray.get_collider().player_interact()
 
+func get_drop_position() -> Vector3:
+	var direction = -head.global_transform.basis.z
+	return head.global_position + direction
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
