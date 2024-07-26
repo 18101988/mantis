@@ -51,7 +51,7 @@ func _unhandled_input(event):
  
 func interact() -> void:
 	if interact_ray.is_colliding():
-		print("interact with ", interact_ray.get_collider())
+		interact_ray.get_collider().player_interact()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
