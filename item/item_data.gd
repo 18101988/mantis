@@ -6,3 +6,6 @@ class_name ItemData
 @export var stackable: bool = false
 @export var consumable: bool = false
 @export var texture: AtlasTexture
+
+func use(target) -> void:
+	pass

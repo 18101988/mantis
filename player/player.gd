@@ -9,6 +9,7 @@ const JUMP_VELOCITY = 4.5
  
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var health: int = 5
 
 var look_rot: Vector2
 
@@ -17,16 +18,8 @@ var look_rot: Vector2
 
 
 func _ready():
+	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-#this function is used for when taking in the mouses cursor location and translating
-#those coordinates to be useful(?) 
-
-#func _input(event): #this is a function. 
-#	if event is InputEventMouseMotion and free_mouse_cursor == 0: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
-#		look_rot.y -= (event.relative.x * 0.2)
-#		look_rot.x -= (event.relative.y * 0.2)
-#		look_rot.x = clamp(look_rot.x, -80, 90)
 
 func _unhandled_input(event):
 	
@@ -56,6 +49,9 @@ func interact() -> void:
 func get_drop_position() -> Vector3:
 	var direction = -head.global_transform.basis.z
 	return head.global_position + direction
+
+func heal(heal_value: int) -> void:
+	health += heal_value
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

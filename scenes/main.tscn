@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b4mo58de1neb4"]
+[gd_scene load_steps=39 format=3 uid="uid://b4mo58de1neb4"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -20,12 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="18_tmfqr"]
 [ext_resource type="PackedScene" uid="uid://c86eijf03jm1p" path="res://assets/Geography/Town_Geo_No_Buildings.glb" id="19_ujqe6"]
 [ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="20_u8nd4"]
-[ext_resource type="PackedScene" uid="uid://b5srie1k5oyfm" path="res://player.tscn" id="21_4q6k6"]
+[ext_resource type="PackedScene" uid="uid://b5srie1k5oyfm" path="res://player/player.tscn" id="21_4q6k6"]
 [ext_resource type="Script" path="res://inventory/inventory_interface.gd" id="21_icb5f"]
 [ext_resource type="Resource" uid="uid://ncjfjmrktct1" path="res://text_inv.tres" id="22_hph0q"]
 [ext_resource type="PackedScene" uid="uid://bmbxq4mgofix2" path="res://inventory/inventory.tscn" id="22_mdipm"]
 [ext_resource type="PackedScene" uid="uid://dg36vp5juvdv2" path="res://inventory/slot.tscn" id="25_sqt1s"]
 [ext_resource type="PackedScene" uid="uid://bg7mhq8niuedd" path="res://interactable/chest.tscn" id="26_bf662"]
+[ext_resource type="PackedScene" uid="uid://cl15au0seid0o" path="res://inventory/hot_bar_inventory.tscn" id="26_dsr2o"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="27_nvd02"]
 [ext_resource type="Resource" uid="uid://sb245rbgw657" path="res://item/items/blue_book.tres" id="28_q56d0"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
@@ -196,6 +197,12 @@ offset_left = 62.0
 offset_top = 58.0
 offset_right = 102.0
 offset_bottom = 98.0
+
+[node name="HotBarInventory" parent="UI" instance=ExtResource("26_dsr2o")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 142.0
+offset_bottom = 50.0
 
 [node name="Chest" parent="." instance=ExtResource("26_bf662")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74837, 0, -1.99096)
