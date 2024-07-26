@@ -13,6 +13,8 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var look_rot: Vector2
 
 @onready var head: Camera3D = $Camera3D
+@onready var interact_ray:RayCast3D = $Camera3D/InteractRay
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -43,7 +45,14 @@ func _unhandled_input(event):
 		free_mouse_cursor = 1
 	elif Input.is_action_pressed("inventory") and free_mouse_cursor == 1:
 		free_mouse_cursor = 0
+		
+	if Input.is_action_just_pressed("interact"):
+		interact()
  
+func interact() -> void:
+	if interact_ray.is_colliding():
+		print("interact with ", interact_ray.get_collider())
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

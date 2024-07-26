@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b4mo58de1neb4"]
+[gd_scene load_steps=30 format=3 uid="uid://b4mo58de1neb4"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://ncjfjmrktct1" path="res://text_inv.tres" id="22_hph0q"]
 [ext_resource type="PackedScene" uid="uid://bmbxq4mgofix2" path="res://inventory/inventory.tscn" id="22_mdipm"]
 [ext_resource type="PackedScene" uid="uid://dg36vp5juvdv2" path="res://inventory/slot.tscn" id="25_sqt1s"]
+[ext_resource type="PackedScene" uid="uid://bg7mhq8niuedd" path="res://interactable/chest.tscn" id="26_bf662"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwhsh"]
 panorama = ExtResource("20_u8nd4")
@@ -158,3 +159,6 @@ offset_bottom = 50.0
 modulate = Color(1, 1, 1, 0.521569)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
+
+[node name="Chest" parent="." instance=ExtResource("26_bf662")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.951, 0, 63.1312)
