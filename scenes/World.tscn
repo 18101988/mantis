@@ -1,5 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://b4mo58de1neb4"]
 
+<<<<<<< Updated upstream:scenes/World.tscn
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="1_bofed"]
 [ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="1_fd65f"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_juqn7"]
@@ -20,6 +21,41 @@
 [ext_resource type="PackedScene" uid="uid://b2wcijdhj3uvx" path="res://assets/BuildingsExt/PowerPlant/PowerPlant.glb" id="15_vfrdk"]
 [ext_resource type="PackedScene" uid="uid://bg5frntbe6e8b" path="res://assets/BuildingsExt/School/school.glb" id="16_1ax3r"]
 [ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="17_odcw8"]
+=======
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
+[ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
+[ext_resource type="PackedScene" uid="uid://5p08x2tqhp80" path="res://assets/BuildingsExt/DownTown/general_shop_3.glb" id="3_abjac"]
+[ext_resource type="PackedScene" uid="uid://0l3usfm35a03" path="res://assets/BuildingsExt/DownTown/general_shop_2.glb" id="4_r4snq"]
+[ext_resource type="PackedScene" uid="uid://bn1dra8xnme4i" path="res://assets/BuildingsExt/DownTown/Theatre_House_removed_pieces.glb" id="5_ceroa"]
+[ext_resource type="PackedScene" uid="uid://cqgirsa7mug4d" path="res://assets/BuildingsExt/DownTown/court_house.glb" id="6_xwefr"]
+[ext_resource type="PackedScene" uid="uid://rarrxqf7pv72" path="res://assets/BuildingsExt/DownTown/PostOfficeModel.glb" id="7_mx3pi"]
+[ext_resource type="PackedScene" uid="uid://bx2kquon27evp" path="res://assets/BuildingsExt/DownTown/hotel_05_28_24_linked_to_town_exterior.glb" id="8_g485v"]
+[ext_resource type="PackedScene" uid="uid://pq77nrud3d6o" path="res://assets/BuildingsExt/Grocery/GroceryStore_complex_no_collision.glb" id="9_tcib5"]
+[ext_resource type="PackedScene" uid="uid://cvmu18coc7u7c" path="res://assets/BuildingsExt/Grocery/motel_removed_piecesblend.glb" id="10_ptg5e"]
+[ext_resource type="PackedScene" uid="uid://b7lbv8pbps7v1" path="res://assets/BuildingsExt/DownTown/gas_station_1.glb" id="11_00lcj"]
+[ext_resource type="PackedScene" uid="uid://duqmq5dixu2oy" path="res://assets/BuildingsExt/Residents/BigHouseRemovedPieces.glb" id="12_8si5w"]
+[ext_resource type="PackedScene" uid="uid://dr64k17qornuk" path="res://assets/BuildingsExt/Residents/MediumHouse.glb" id="13_2dmks"]
+[ext_resource type="PackedScene" uid="uid://r3r4f4861cle" path="res://assets/BuildingsExt/Residents/trailer_house_1.glb" id="14_87xdf"]
+[ext_resource type="PackedScene" uid="uid://cyqr1gweunixi" path="res://assets/BuildingsExt/Residents/trailer_house_2.glb" id="15_y0q56"]
+[ext_resource type="PackedScene" uid="uid://b2wcijdhj3uvx" path="res://assets/BuildingsExt/PowerPlant/PowerPlant.glb" id="16_f1elq"]
+[ext_resource type="PackedScene" uid="uid://bg5frntbe6e8b" path="res://assets/BuildingsExt/School/school.glb" id="17_7cxw3"]
+[ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="18_tmfqr"]
+[ext_resource type="PackedScene" uid="uid://c86eijf03jm1p" path="res://assets/Geography/Town_Geo_No_Buildings.glb" id="19_ujqe6"]
+[ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="20_u8nd4"]
+[ext_resource type="PackedScene" uid="uid://b5srie1k5oyfm" path="res://player/player.tscn" id="21_4q6k6"]
+[ext_resource type="Script" path="res://inventory/inventory_interface.gd" id="21_icb5f"]
+[ext_resource type="Resource" uid="uid://ncjfjmrktct1" path="res://text_inv.tres" id="22_hph0q"]
+[ext_resource type="PackedScene" uid="uid://bmbxq4mgofix2" path="res://inventory/inventory.tscn" id="22_mdipm"]
+[ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="23_f6w5e"]
+[ext_resource type="PackedScene" uid="uid://dg36vp5juvdv2" path="res://inventory/slot.tscn" id="25_sqt1s"]
+[ext_resource type="PackedScene" uid="uid://bg7mhq8niuedd" path="res://interactable/chest.tscn" id="26_bf662"]
+[ext_resource type="PackedScene" uid="uid://cl15au0seid0o" path="res://inventory/hot_bar_inventory.tscn" id="26_dsr2o"]
+[ext_resource type="Script" path="res://inventory/inventory_data.gd" id="27_nvd02"]
+[ext_resource type="Resource" uid="uid://sb245rbgw657" path="res://item/items/blue_book.tres" id="28_q56d0"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
+[ext_resource type="PackedScene" uid="uid://cvxn6kp8jrfnf" path="res://item/pick_up/pick_up.tscn" id="30_ppoir"]
+[ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/knife.tres" id="31_v1ut6"]
+>>>>>>> Stashed changes:scenes/main.tscn
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwhsh"]
 panorama = ExtResource("1_fd65f")
@@ -138,9 +174,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.232, 12.0599, 113.528)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6129, -12.6634, -31.3054)
 script = ExtResource("2_juqn7")
 
+<<<<<<< Updated upstream:scenes/World.tscn
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74264, 0.36232)
 mesh = SubResource("CapsuleMesh_dno4v")
+=======
+[node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("21_icb5f")
+>>>>>>> Stashed changes:scenes/main.tscn
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Player"]
 transform = Transform3D(0.996515, 0, 0, 0, 0.996515, 0, 0, 0, 0.756461, -0.0639725, 1.75297, 0.348122)
@@ -192,7 +240,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74837, 0, -1.99096)
 inventory_data = SubResource("Resource_1rbgy")
 
 [node name="PickUp" parent="." instance=ExtResource("30_ppoir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39293, 1.37417, -1.99096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73804, 1.37417, -1.99096)
 slot_data = SubResource("Resource_v5aln")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]

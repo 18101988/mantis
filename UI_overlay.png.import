@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqwbwm3o22j7w"
-path="res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"
+uid="uid://brsndpthefie5"
+path="res://.godot/imported/UI_overlay.png-9fad2fd62ffaac9e5b2ff5cc9e8849bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/cursors_hands_grab_grab_before.png"
-dest_files=["res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"]
+source_file="res://UI_overlay.png"
+dest_files=["res://.godot/imported/UI_overlay.png-9fad2fd62ffaac9e5b2ff5cc9e8849bf.ctex"]
 
 [params]
 

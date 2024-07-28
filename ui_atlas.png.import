@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqwbwm3o22j7w"
-path="res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"
+uid="uid://bunugal6kvjh3"
+path="res://.godot/imported/ui_atlas.png-aa1aa353e19deb1c1fc500215a2c3959.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/cursors_hands_grab_grab_before.png"
-dest_files=["res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"]
+source_file="res://ui_atlas.png"
+dest_files=["res://.godot/imported/ui_atlas.png-aa1aa353e19deb1c1fc500215a2c3959.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqwbwm3o22j7w"
-path="res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"
+uid="uid://bi4pnt27hyt5u"
+path="res://.godot/imported/search_eye.png-622aac9982275890ea2ef01c3803e548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/cursors_hands_grab_grab_before.png"
-dest_files=["res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"]
+source_file="res://assets/Images/search_eye.png"
+dest_files=["res://.godot/imported/search_eye.png-622aac9982275890ea2ef01c3803e548.ctex"]
 
 [params]
 

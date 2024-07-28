@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqwbwm3o22j7w"
-path="res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"
+uid="uid://dulqcg1fxlyed"
+path="res://.godot/imported/walk_forward.png-74d580ff4b1bf9282ae09509a92cf92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/cursors_hands_grab_grab_before.png"
-dest_files=["res://.godot/imported/cursors_hands_grab_grab_before.png-339d6bef4fd2854220f08e21a08ef504.ctex"]
+source_file="res://assets/Images/walk_forward.png"
+dest_files=["res://.godot/imported/walk_forward.png-74d580ff4b1bf9282ae09509a92cf92a.ctex"]
 
 [params]
 

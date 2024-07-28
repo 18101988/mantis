@@ -19,8 +19,13 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 window/size/mode=3
 window/stretch/mode="viewport"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 window/stretch/scale=4.0
 =======
+mouse_cursor/custom_image="res://assets/Images/cursors_hands_point.png"
+>>>>>>> Stashed changes
+=======
+window/stretch/scale=2.0
 mouse_cursor/custom_image="res://assets/Images/cursors_hands_point.png"
 >>>>>>> Stashed changes
 
