@@ -16,8 +16,13 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
+<<<<<<< Updated upstream
 window/stretch/scale=4.0
+=======
+mouse_cursor/custom_image="res://assets/Images/cursors_hands_point.png"
+>>>>>>> Stashed changes
 
 [input]
 
