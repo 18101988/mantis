@@ -37,6 +37,7 @@ func _unhandled_input(event):
 		
 	#if you press "tab" it will "emit" the toggle_inventory signal(sends out the signal)
 	if Input.is_action_just_pressed("inventory"):
+		print("message  sent")
 		toggle_inventory.emit()
 		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		#free_mouse_cursor = 1

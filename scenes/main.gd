@@ -2,6 +2,8 @@ extends Node
 
 const PickUp = preload("res://item/pick_up/pick_up.tscn")
 
+var cursor_visible = 0
+
 @onready var player: CharacterBody3D = $Player
 @onready var inventory_interface: Control = $UI/InventoryInterface
 @onready var hot_bar_inventory: PanelContainer = $UI/HotBarInventory
@@ -25,24 +27,23 @@ func _ready() -> void:
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	#inventory_interface.visible = not inventory_interface.visible
 	
-	var cursor_visible = 0
+	
 	
 	#hot_bar_inventory.show()
 	inventory_interface.show()
 	
-	if Input.is_action_just_pressed("inventory") and cursor_visible == 0:
+	if cursor_visible == 0:
 		#pass
-		print(" first if %s", cursor_visible)
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		print(Input.mouse_mode)
+		print("first if %s", cursor_visible)
 		cursor_visible = 1
+		
 		#hot_bar_inventory.show()
-	
-	if Input.is_action_just_pressed("inventory") and cursor_visible == 1:
+	elif cursor_visible == 1:
 		#pass
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
 		print("second if %s", cursor_visible)
+		cursor_visible = 0
 		#hot_bar_inventory.hide()
 	
 	
