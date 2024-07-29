@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+#this is use to signal to toggle_inventor to trigger
 signal toggle_inventory()
 
 @export var inventory_data: InventoryData
@@ -34,14 +35,16 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 		
+	#if you press "tab" it will "emit" the toggle_inventory signal(sends out the signal)
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		free_mouse_cursor = 1
-	elif Input.is_action_pressed("inventory") and free_mouse_cursor == 1:
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		free_mouse_cursor = 0
-		print(free_mouse_cursor)
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		#free_mouse_cursor = 1
+	#elif Input.is_action_just_pressed("inventory") and free_mouse_cursor == 1:
+		#print("free mouse cursor is zero")
+		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		#free_mouse_cursor = 0
+		
 		
 	if Input.is_action_just_pressed("interact"):
 		interact()
@@ -49,6 +52,7 @@ func _unhandled_input(event):
 func interact() -> void:
 	if interact_ray.is_colliding():
 		interact_ray.get_collider().player_interact()
+		print("we are interacting")
 
 func get_drop_position() -> Vector3:
 	var direction = -head.global_transform.basis.z
