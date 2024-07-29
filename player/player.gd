@@ -36,9 +36,12 @@ func _unhandled_input(event):
 		
 	if Input.is_action_just_pressed("inventory"):
 		toggle_inventory.emit()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		free_mouse_cursor = 1
 	elif Input.is_action_pressed("inventory") and free_mouse_cursor == 1:
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 		free_mouse_cursor = 0
+		print(free_mouse_cursor)
 		
 	if Input.is_action_just_pressed("interact"):
 		interact()

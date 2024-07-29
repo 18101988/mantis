@@ -6,6 +6,8 @@ const PickUp = preload("res://item/pick_up/pick_up.tscn")
 @onready var inventory_interface: Control = $UI/InventoryInterface
 @onready var hot_bar_inventory: PanelContainer = $UI/HotBarInventory
 
+
+
 func _ready() -> void:
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
@@ -17,14 +19,28 @@ func _ready() -> void:
 		node.toggle_inventory.connect(toggle_inventory_interface)
 
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
-	inventory_interface.visible = not inventory_interface.visible
+	#inventory_interface.visible = not inventory_interface.visible
 	
-	if inventory_interface.visible:
+	var cursor_visible: bool = true
+	
+	hot_bar_inventory.show()
+	inventory_interface.show()
+	if Input.is_action_just_pressed("inventory") and !cursor_visible:
+		#pass
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		hot_bar_inventory.hide()
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		hot_bar_inventory.show()
+		print(cursor_visible)
+		#hot_bar_inventory.hide()
+	if Input.is_action_pressed("inventory") and cursor_visible:
+		pass
+		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		#hot_bar_inventory.show()
+	
+	#if inventory_interface.visible:
+	#	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#	#hot_bar_inventory.hide()
+	#else:
+	#	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#	hot_bar_inventory.show()
 		
 	if external_inventory_owner and inventory_interface.visible:
 		inventory_interface.set_external_inventory(external_inventory_owner)
