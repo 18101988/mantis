@@ -158,13 +158,14 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.07, 0)
 
 [node name="Player" parent="." instance=ExtResource("21_4q6k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79738, 0, 0.877838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.396, 0, 43.0746)
 inventory_data = ExtResource("22_hph0q")
 equip_inventory_data = SubResource("Resource_3hvi6")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -217,11 +218,11 @@ offset_right = 142.0
 offset_bottom = 50.0
 
 [node name="Chest" parent="." instance=ExtResource("26_bf662")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74837, 0, -1.99096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.347, 0, 40.2058)
 inventory_data = SubResource("Resource_1rbgy")
 
 [node name="PickUp" parent="." instance=ExtResource("30_ppoir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39293, 1.37417, -1.99096)
+transform = Transform3D(0.209704, 0, 0, 0, 0.308421, 0, 0, 0, 0.406117, 125.505, 1.24359, 40.6942)
 slot_data = SubResource("Resource_v5aln")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
