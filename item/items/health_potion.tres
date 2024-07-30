@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://2pthxu7lkgi7"]
+
+[ext_resource type="Script" path="res://item/item_data_consumable.gd" id="1_5rgvv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ro3ha"]
+load_path = "res://.godot/imported/#1 - Transparent Icons.png-cfb162c63d075773953986fd2d2afadb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csj8w"]
+atlas = SubResource("CompressedTexture2D_ro3ha")
+region = Rect2(160, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_5rgvv")
+heal_value = 1
+name = "Health Potion"
+description = "Smells like shit."
+stackable = true
+consumable = false
+texture = SubResource("AtlasTexture_csj8w")
