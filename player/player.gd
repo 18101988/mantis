@@ -25,9 +25,9 @@ func _ready():
 
 func _unhandled_input(event):
 	
-	var free_mouse_cursor = 0
-	
-	if event is InputEventMouseMotion and free_mouse_cursor == 0: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
+	#as far as I can tell, this is a part of the mouselook section
+	if event is InputEventMouseMotion: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
+		print("mouselook is on")
 		look_rot.y -= (event.relative.x * 0.2)
 		look_rot.x -= (event.relative.y * 0.2)
 		look_rot.x = clamp(look_rot.x, -80, 90)
@@ -84,6 +84,7 @@ func _physics_process(delta: float) -> void:
  
 	move_and_slide()
 	
+	#this is also apart of the mouselook functionality
 	var plat_rot = get_platform_angular_velocity()
 	look_rot.y += rad_to_deg(plat_rot.y * delta)
 	head.rotation_degrees.x = look_rot.x
