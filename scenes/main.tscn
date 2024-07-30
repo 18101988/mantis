@@ -1,27 +1,5 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4mo58de1neb4"]
+[gd_scene load_steps=41 format=3 uid="uid://b4mo58de1neb4"]
 
-<<<<<<< Updated upstream:scenes/World.tscn
-[ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="1_bofed"]
-[ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="1_fd65f"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="2_juqn7"]
-[ext_resource type="PackedScene" uid="uid://pq77nrud3d6o" path="res://assets/BuildingsExt/Grocery/GroceryStore_complex_no_collision.glb" id="3_3oydt"]
-[ext_resource type="PackedScene" uid="uid://c86eijf03jm1p" path="res://assets/Geography/Town_Geo_No_Buildings.glb" id="3_qqkgs"]
-[ext_resource type="PackedScene" uid="uid://5p08x2tqhp80" path="res://assets/BuildingsExt/DownTown/general_shop_3.glb" id="3_v4eto"]
-[ext_resource type="PackedScene" uid="uid://bn1dra8xnme4i" path="res://assets/BuildingsExt/DownTown/Theatre_House_removed_pieces.glb" id="4_ddjgp"]
-[ext_resource type="PackedScene" uid="uid://b7lbv8pbps7v1" path="res://assets/BuildingsExt/DownTown/gas_station_1.glb" id="4_k6mc0"]
-[ext_resource type="PackedScene" uid="uid://cvmu18coc7u7c" path="res://assets/BuildingsExt/Grocery/motel_removed_piecesblend.glb" id="4_tjf7e"]
-[ext_resource type="PackedScene" uid="uid://cqgirsa7mug4d" path="res://assets/BuildingsExt/DownTown/court_house.glb" id="5_36g5b"]
-[ext_resource type="PackedScene" uid="uid://rarrxqf7pv72" path="res://assets/BuildingsExt/DownTown/PostOfficeModel.glb" id="6_rjv2t"]
-[ext_resource type="PackedScene" uid="uid://bx2kquon27evp" path="res://assets/BuildingsExt/DownTown/hotel_05_28_24_linked_to_town_exterior.glb" id="7_e4m6r"]
-[ext_resource type="PackedScene" uid="uid://0l3usfm35a03" path="res://assets/BuildingsExt/DownTown/general_shop_2.glb" id="7_qi0yg"]
-[ext_resource type="PackedScene" uid="uid://duqmq5dixu2oy" path="res://assets/BuildingsExt/Residents/BigHouseRemovedPieces.glb" id="11_su6lv"]
-[ext_resource type="PackedScene" uid="uid://dr64k17qornuk" path="res://assets/BuildingsExt/Residents/MediumHouse.glb" id="12_epsux"]
-[ext_resource type="PackedScene" uid="uid://r3r4f4861cle" path="res://assets/BuildingsExt/Residents/trailer_house_1.glb" id="13_aghqs"]
-[ext_resource type="PackedScene" uid="uid://cyqr1gweunixi" path="res://assets/BuildingsExt/Residents/trailer_house_2.glb" id="14_guxan"]
-[ext_resource type="PackedScene" uid="uid://b2wcijdhj3uvx" path="res://assets/BuildingsExt/PowerPlant/PowerPlant.glb" id="15_vfrdk"]
-[ext_resource type="PackedScene" uid="uid://bg5frntbe6e8b" path="res://assets/BuildingsExt/School/school.glb" id="16_1ax3r"]
-[ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="17_odcw8"]
-=======
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
 [ext_resource type="PackedScene" uid="uid://5p08x2tqhp80" path="res://assets/BuildingsExt/DownTown/general_shop_3.glb" id="3_abjac"]
@@ -54,11 +32,10 @@
 [ext_resource type="Resource" uid="uid://sb245rbgw657" path="res://item/items/blue_book.tres" id="28_q56d0"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
 [ext_resource type="PackedScene" uid="uid://cvxn6kp8jrfnf" path="res://item/pick_up/pick_up.tscn" id="30_ppoir"]
-[ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/knife.tres" id="31_v1ut6"]
->>>>>>> Stashed changes:scenes/main.tscn
+[ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/apple.tres" id="31_v1ut6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwhsh"]
-panorama = ExtResource("1_fd65f")
+panorama = ExtResource("20_u8nd4")
 
 [sub_resource type="Sky" id="Sky_5m1p6"]
 sky_material = SubResource("PanoramaSkyMaterial_hwhsh")
@@ -69,74 +46,87 @@ sky = SubResource("Sky_5m1p6")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_dno4v"]
+[sub_resource type="Resource" id="Resource_3hvi6"]
+script = ExtResource("23_f6w5e")
+slot_datas = Array[ExtResource("29_a8xmc")]([null])
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yvphx"]
-radius = 0.695951
-height = 1.99195
+[sub_resource type="Resource" id="Resource_k6lh7"]
+script = ExtResource("29_a8xmc")
+item_data = ExtResource("28_q56d0")
+quantity = 1
 
-[node name="World" type="Node3D"]
+[sub_resource type="Resource" id="Resource_1rbgy"]
+script = ExtResource("27_nvd02")
+slot_datas = Array[ExtResource("29_a8xmc")]([SubResource("Resource_k6lh7"), null, null, null, null])
+
+[sub_resource type="Resource" id="Resource_v5aln"]
+script = ExtResource("29_a8xmc")
+item_data = ExtResource("31_v1ut6")
+quantity = 1
+
+[node name="Main" type="Node"]
+script = ExtResource("1_a08c1")
 
 [node name="BuildingsExt" type="Node3D" parent="."]
 
 [node name="DownTown" type="Node3D" parent="BuildingsExt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.043, 0, 115.55)
 
-[node name="general_shop_1" parent="BuildingsExt/DownTown" instance=ExtResource("1_bofed")]
+[node name="general_shop_1" parent="BuildingsExt/DownTown" instance=ExtResource("2_aufub")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.2881, 0, 3.97005)
 
-[node name="general_shop_3" parent="BuildingsExt/DownTown" instance=ExtResource("3_v4eto")]
+[node name="general_shop_3" parent="BuildingsExt/DownTown" instance=ExtResource("3_abjac")]
 transform = Transform3D(9.05975e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, 9.05975e-08, -5.12874, 0, 0)
 
-[node name="general_shop_2" parent="BuildingsExt/DownTown" instance=ExtResource("7_qi0yg")]
+[node name="general_shop_2" parent="BuildingsExt/DownTown" instance=ExtResource("4_r4snq")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.1942, 0, 13.1893)
 
-[node name="Theatre_House_removed_pieces" parent="BuildingsExt/DownTown" instance=ExtResource("4_ddjgp")]
+[node name="Theatre_House_removed_pieces" parent="BuildingsExt/DownTown" instance=ExtResource("5_ceroa")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22.7946, 0, -7.71113)
 
-[node name="court_house" parent="BuildingsExt/DownTown" instance=ExtResource("5_36g5b")]
+[node name="court_house" parent="BuildingsExt/DownTown" instance=ExtResource("6_xwefr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -19)
 
-[node name="PostOfficeModel" parent="BuildingsExt/DownTown" instance=ExtResource("6_rjv2t")]
+[node name="PostOfficeModel" parent="BuildingsExt/DownTown" instance=ExtResource("7_mx3pi")]
 transform = Transform3D(1.13247e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, 1.13247e-07, 23.3649, 0, 20.9185)
 
-[node name="hotel_05_28_24_linked_to_town_exterior" parent="BuildingsExt/DownTown" instance=ExtResource("7_e4m6r")]
+[node name="hotel_05_28_24_linked_to_town_exterior" parent="BuildingsExt/DownTown" instance=ExtResource("8_g485v")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23.2718, 0, -24.4487)
 
 [node name="Grocery" type="Node3D" parent="BuildingsExt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.043, 0, 115.55)
 
-[node name="GroceryStore_complex_no_collision" parent="BuildingsExt/Grocery" instance=ExtResource("3_3oydt")]
+[node name="GroceryStore_complex_no_collision" parent="BuildingsExt/Grocery" instance=ExtResource("9_tcib5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.993, 0.005, -139.833)
 
-[node name="motel_removed_piecesblend" parent="BuildingsExt/Grocery" instance=ExtResource("4_tjf7e")]
+[node name="motel_removed_piecesblend" parent="BuildingsExt/Grocery" instance=ExtResource("10_ptg5e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.776, 0.005, -111.532)
 
-[node name="gas_station_1" parent="BuildingsExt/Grocery" instance=ExtResource("4_k6mc0")]
+[node name="gas_station_1" parent="BuildingsExt/Grocery" instance=ExtResource("11_00lcj")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -26.1904, 0.005, -57.0534)
 
 [node name="Residents" type="Node3D" parent="BuildingsExt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.043, 0, 115.55)
 
-[node name="BigHouseRemovedPieces" parent="BuildingsExt/Residents" instance=ExtResource("11_su6lv")]
+[node name="BigHouseRemovedPieces" parent="BuildingsExt/Residents" instance=ExtResource("12_8si5w")]
 transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, -54.2986, 0.00466001, -49.1996)
 
-[node name="MediumHouse" parent="BuildingsExt/Residents" instance=ExtResource("12_epsux")]
+[node name="MediumHouse" parent="BuildingsExt/Residents" instance=ExtResource("13_2dmks")]
 transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, -34.71, 0, 2.186)
 
-[node name="trailer_house_1" parent="BuildingsExt/Residents" instance=ExtResource("13_aghqs")]
+[node name="trailer_house_1" parent="BuildingsExt/Residents" instance=ExtResource("14_87xdf")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -66.104, -0.11121, 0)
 
-[node name="trailer_house_2" parent="BuildingsExt/Residents" instance=ExtResource("14_guxan")]
+[node name="trailer_house_2" parent="BuildingsExt/Residents" instance=ExtResource("15_y0q56")]
 transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, -59.8529, -0.000520349, -9)
 
-[node name="PowerPlant" parent="BuildingsExt" instance=ExtResource("15_vfrdk")]
+[node name="PowerPlant" parent="BuildingsExt" instance=ExtResource("16_f1elq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.918, 0.005, 222.031)
 
-[node name="school" parent="BuildingsExt" instance=ExtResource("16_1ax3r")]
+[node name="school" parent="BuildingsExt" instance=ExtResource("17_7cxw3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 69.9684, 0.0729849, -54.4187)
 
-[node name="LabFinal" parent="BuildingsExt" instance=ExtResource("17_odcw8")]
+[node name="LabFinal" parent="BuildingsExt" instance=ExtResource("18_tmfqr")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -393.581, 38.5679, -83.8659)
 
 [node name="Infrastructure" type="Node3D" parent="."]
@@ -144,7 +134,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -393.581, 38.5679, -83.
 [node name="Geography" type="Node3D" parent="."]
 transform = Transform3D(7.88, 0, 0, 0, 7.88, 0, 0, 0, 7.88, 0, 12.07, 0)
 
-[node name="town_geo" parent="Geography" instance=ExtResource("3_qqkgs")]
+[node name="town_geo" parent="Geography" instance=ExtResource("19_ujqe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.922, -1.53154, 2.286)
 skeleton = NodePath("../..")
 
@@ -167,18 +157,13 @@ sky_mode = 1
 [node name="Specimans" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.07, 0)
 
-[node name="Player" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.232, 12.0599, 113.528)
+[node name="Player" parent="." instance=ExtResource("21_4q6k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.396, 0, 43.0746)
+inventory_data = ExtResource("22_hph0q")
+equip_inventory_data = SubResource("Resource_3hvi6")
 
-[node name="Player" type="CharacterBody3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6129, -12.6634, -31.3054)
-script = ExtResource("2_juqn7")
+[node name="UI" type="CanvasLayer" parent="."]
 
-<<<<<<< Updated upstream:scenes/World.tscn
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74264, 0.36232)
-mesh = SubResource("CapsuleMesh_dno4v")
-=======
 [node name="InventoryInterface" type="Control" parent="UI"]
 visible = false
 layout_mode = 3
@@ -188,27 +173,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("21_icb5f")
->>>>>>> Stashed changes:scenes/main.tscn
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Player"]
-transform = Transform3D(0.996515, 0, 0, 0, 0.996515, 0, 0, 0, 0.756461, -0.0639725, 1.75297, 0.348122)
-shape = SubResource("CapsuleShape3D_yvphx")
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("22_mdipm")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 449.0
+offset_top = 570.0
+offset_right = 489.0
+offset_bottom = 610.0
+grow_horizontal = 1
+grow_vertical = 1
 
-<<<<<<< Updated upstream:scenes/World.tscn
-[node name="Head" type="Node3D" parent="Player/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012569, 2.19074, -0.00287747)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Player/Head"]
-transform = Transform3D(1, 0, 0, 0, 0.999965, -0.00834256, 0, 0.00834256, 0.999965, 0.0302811, 0.944549, -0.0916977)
-=======
 [node name="EquipInventory" parent="UI/InventoryInterface" instance=ExtResource("22_mdipm")]
 layout_mode = 0
-offset_left = 1063.0
-offset_top = 572.0
-offset_right = 1103.0
-offset_bottom = 612.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 379.0
+offset_top = 571.0
+offset_right = 419.0
+offset_bottom = 611.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("22_mdipm")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.546007
@@ -217,10 +212,9 @@ anchor_right = 0.575521
 anchor_bottom = 0.391975
 offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("25_sqt1s")]
+visible = false
 modulate = Color(1, 1, 1, 0.521569)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -230,20 +224,19 @@ offset_right = 102.0
 offset_bottom = 98.0
 
 [node name="HotBarInventory" parent="UI" instance=ExtResource("26_dsr2o")]
-offset_left = 619.0
-offset_top = 570.0
-offset_right = 661.0
-offset_bottom = 612.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 142.0
+offset_bottom = 50.0
 
 [node name="Chest" parent="." instance=ExtResource("26_bf662")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74837, 0, -1.99096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.347, 0, 40.2058)
 inventory_data = SubResource("Resource_1rbgy")
 
 [node name="PickUp" parent="." instance=ExtResource("30_ppoir")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73804, 1.37417, -1.99096)
+transform = Transform3D(0.209704, 0, 0, 0, 0.308421, 0, 0, 0, 0.406117, 125.505, 1.24359, 40.6942)
 slot_data = SubResource("Resource_v5aln")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
 [connection signal="visibility_changed" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_visibility_changed"]
->>>>>>> Stashed changes:scenes/main.tscn

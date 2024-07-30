@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" path="res://inventory/slot.gd" id="1_h7snh"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2ohwp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msv2j"]
 
 [node name="Slot" type="PanelContainer"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(16, 16)
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_msv2j")
 script = ExtResource("1_h7snh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-material = SubResource("CanvasItemMaterial_2ohwp")
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
@@ -20,7 +20,6 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-expand_mode = 1
 stretch_mode = 5
 
 [node name="QuantityLabel" type="Label" parent="."]

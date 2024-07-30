@@ -1,32 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvxn6kp8jrfnf"]
+[gd_scene load_steps=6 format=3 uid="uid://cvxn6kp8jrfnf"]
 
+[ext_resource type="Texture2D" uid="uid://cr2e7ggvieevv" path="res://item/item_atlas.tres" id="1_818y3"]
 [ext_resource type="Script" path="res://item/pick_up/pick_up.gd" id="1_bxk38"]
-[ext_resource type="Texture2D" uid="uid://l7nw3tt6osrs" path="res://knife_item_pickup.png" id="2_g0rug"]
+[ext_resource type="PackedScene" uid="uid://buuy1h1a58n51" path="res://item/knife.glb" id="2_70qyc"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_1xni8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qlc0g"]
-radius = 0.262224
+radius = 0.259606
 
 [node name="PickUp" type="RigidBody3D"]
 collision_layer = 0
-mass = 1000.0
-sleeping = true
-can_sleep = false
-freeze_mode = 1
+lock_rotation = true
 script = ExtResource("1_bxk38")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-texture_filter = 2
-texture = ExtResource("2_g0rug")
+[node name="knife" parent="." instance=ExtResource("2_70qyc")]
+transform = Transform3D(0.423195, 0, 0, 0, 0.389248, 0, 0, 0, 0.580831, -0.0576904, 0.00293908, -0.0712719)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("PrismMesh_1xni8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.27188, 0, 0, 0, 1, 0, 0, 0, 4.24365, 0.127775, 0.227155, -0.163821)
 shape = SubResource("SphereShape3D_qlc0g")
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.410779, 0, 0, 0, 1, 0, 0.106796, 0)
+visible = false
+texture = ExtResource("1_818y3")
+
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489597, 0)
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.14774, 0, 0, 0, 1, 0, 0, 0, 1, 0.112784, -0.235467, -0.137127)
 shape = SubResource("SphereShape3D_qlc0g")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
