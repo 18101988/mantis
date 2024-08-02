@@ -25,9 +25,15 @@ func _ready():
 
 func _unhandled_input(event):
 	
+	var free_mouse_cursor = 0
+	
+	var cursor_visible: bool = false
+	print("mouse event is %s", event)
 	#as far as I can tell, this is a part of the mouselook section
 	if event is InputEventMouseMotion: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
-		print("mouselook is on")
+		
+		print("mouselook is on.")
+		print("mouse event is %s", event)
 		look_rot.y -= (event.relative.x * 0.2)
 		look_rot.x -= (event.relative.y * 0.2)
 		look_rot.x = clamp(look_rot.x, -80, 90)
@@ -38,12 +44,12 @@ func _unhandled_input(event):
 	#if you press "tab" it will "emit" the toggle_inventory signal(sends out the signal)
 	if Input.is_action_just_pressed("inventory"):
 		print("message  sent")
+		free_mouse_cursor = 1
 		toggle_inventory.emit()
 		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		#free_mouse_cursor = 1
 	#elif Input.is_action_just_pressed("inventory") and free_mouse_cursor == 1:
 		#print("free mouse cursor is zero")
-		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		#event = InputEventMouseMotion
 		#free_mouse_cursor = 0
 		
 		
@@ -83,6 +89,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
  
 	move_and_slide()
+	
 	
 	#this is also apart of the mouselook functionality
 	var plat_rot = get_platform_angular_velocity()

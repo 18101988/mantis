@@ -27,8 +27,6 @@ func _ready() -> void:
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	#inventory_interface.visible = not inventory_interface.visible
 	
-	
-	
 	#hot_bar_inventory.show()
 	inventory_interface.show()
 	
@@ -41,7 +39,8 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		#hot_bar_inventory.show()
 	elif cursor_visible == 1:
 		#pass
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		InputEventMouseMotion
 		print("second if %s", cursor_visible)
 		cursor_visible = 0
 		#hot_bar_inventory.hide()
