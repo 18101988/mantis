@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataEquip" load_steps=3 format=3 uid="uid://q7skjpil8b3m"]
+
+[ext_resource type="Script" path="res://item/item_data_equip.gd" id="1_2he2n"]
+[ext_resource type="Texture2D" uid="uid://cr2e7ggvieevv" path="res://item/item_atlas.tres" id="2_bcyyp"]
+
+[resource]
+script = ExtResource("1_2he2n")
+defence = 1
+name = "Iron Helm"
+description = "Garbage protection for your nogin"
+stackable = false
+consumable = false
+texture = ExtResource("2_bcyyp")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cavmh7t8ib2kv"]
+
+[ext_resource type="Script" path="res://item/item_data.gd" id="1_g1qvn"]
+[ext_resource type="Texture2D" uid="uid://l7nw3tt6osrs" path="res://knife_item_pickup.png" id="2_dasmy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr5lu"]
+atlas = ExtResource("2_dasmy")
+region = Rect2(0, 0, 63, 43)
+
+[resource]
+script = ExtResource("1_g1qvn")
+name = "Knife"
+description = "A knife."
+stackable = false
+consumable = false
+texture = SubResource("AtlasTexture_yr5lu")
