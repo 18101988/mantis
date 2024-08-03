@@ -28,7 +28,7 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	#inventory_interface.visible = not inventory_interface.visible
 	
 	#hot_bar_inventory.show()
-	inventory_interface.show()
+	#inventory_interface.show()
 	
 	if cursor_visible == 0:
 		#pass
@@ -42,7 +42,7 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		#var plat_rot = player.get_platform_angular_velocity()
 		
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		InputEventMouseMotion
+		#InputEventMouseMotion
 		#print("second if %s", cursor_visible)
 		cursor_visible = 0
 		mouselook_options.emit()

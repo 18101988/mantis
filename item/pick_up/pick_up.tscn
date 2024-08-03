@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr2e7ggvieevv" path="res://item/item_atlas.tres" id="1_818y3"]
 [ext_resource type="Script" path="res://item/pick_up/pick_up.gd" id="1_bxk38"]
-[ext_resource type="PackedScene" uid="uid://buuy1h1a58n51" path="res://item/knife.glb" id="2_70qyc"]
+[ext_resource type="PackedScene" path="res://item/knife.glb" id="2_70qyc"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_1xni8"]
 

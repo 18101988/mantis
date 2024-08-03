@@ -18,6 +18,7 @@ var look_rot: Vector2
 
 #to turn mouselook on and off
 var mouselook: bool = true
+var free_mouse_cursor: bool = false
 
 #var free_mouse_cursor: bool = false
 
@@ -31,10 +32,10 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-var free_mouse_cursor: bool = false
 
 func _unhandled_input(event):
 	
+	print(event)
 	
 	if event is InputEventMouseMotion:
 		
@@ -48,8 +49,6 @@ func _unhandled_input(event):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
-	
-	
 	
 	#if you press "tab" it will "emit" the toggle_cursor_interaction signal(sends out the signal)
 	if Input.is_action_just_pressed("inventory"):
