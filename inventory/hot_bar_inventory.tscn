@@ -5,8 +5,10 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utdph"]
 
 [node name="HotBarInventory" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 542.0
+offset_top = 572.0
+offset_right = 582.0
+offset_bottom = 612.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_utdph")
 script = ExtResource("1_aobmr")
 

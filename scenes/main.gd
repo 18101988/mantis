@@ -14,8 +14,14 @@ func _ready() -> void:
 	#the signal that was emited from player.gd will reach this toggle_cursor_interaction signal and trigger
 	#it to connect to main.gd and fire the function called toggle_inventory_interface
 	player.toggle_cursor_interaction.connect(toggle_inventory_interface)
+	
+	#this sets players inventory data with the inventory data from the player
 	inventory_interface.set_player_inventory_data(player.inventory_data)
+	
+	#this sets the equip inventory data to the players equipment inventory data
 	inventory_interface.set_equip_inventory_data(player.equip_inventory_data)
+	
+	#
 	inventory_interface.force_close.connect(toggle_inventory_interface)
 	hot_bar_inventory.set_inventory_data(player.inventory_data)
 	
@@ -25,16 +31,17 @@ func _ready() -> void:
 #this is the function that is attached to the signal fired by toggle_cursor_interaction up in the 
 # _ready() funciton
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
-	#inventory_interface.visible = not inventory_interface.visible
+	inventory_interface.visible = not inventory_interface.visible
 	
-	#hot_bar_inventory.show()
-	#inventory_interface.show()
+	hot_bar_inventory.show()
+	inventory_interface.show()
 	
 	if cursor_visible == 0:
 		#pass
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		#print("first if %s", cursor_visible)
 		cursor_visible = 1
+		#inventory_interface.show()
 		mouselook_options.emit()
 		#hot_bar_inventory.show()
 	elif cursor_visible == 1:
@@ -45,7 +52,10 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		#InputEventMouseMotion
 		#print("second if %s", cursor_visible)
 		cursor_visible = 0
+		#inventory_interface.show()
 		mouselook_options.emit()
+		#hot_bar_inventory.show()
+
 		
 		
 	if external_inventory_owner and inventory_interface.visible:
