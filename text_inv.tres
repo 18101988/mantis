@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=10 format=3 uid="uid://ncjfjmrktct1"]
 
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="1_vrt3v"]
-[ext_resource type="Resource" uid="uid://dl23pi6i4bmn" path="res://item/items/health_potion.tres" id="2_cnbaf"]
+[ext_resource type="Resource" uid="uid://2pthxu7lkgi7" path="res://item/items/health_potion.tres" id="2_cnbaf"]
 [ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/apple.tres" id="2_jkg75"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_jbp7m"]
 [ext_resource type="Resource" uid="uid://q7skjpil8b3m" path="res://item/items/iron_helm.tres" id="4_vbj1d"]

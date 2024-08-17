@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://3vj4cjfq6tur"]
+[gd_scene load_steps=41 format=3 uid="uid://b4mo58de1neb4"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -27,7 +27,7 @@
 [ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="23_f6w5e"]
 [ext_resource type="PackedScene" uid="uid://dg36vp5juvdv2" path="res://inventory/slot.tscn" id="25_sqt1s"]
 [ext_resource type="PackedScene" uid="uid://bg7mhq8niuedd" path="res://interactable/chest.tscn" id="26_bf662"]
-[ext_resource type="PackedScene" uid="uid://cbauh4jrrd3fs" path="res://inventory/hot_bar_inventory.tscn" id="26_dsr2o"]
+[ext_resource type="PackedScene" uid="uid://cl15au0seid0o" path="res://inventory/hot_bar_inventory.tscn" id="26_dsr2o"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="27_nvd02"]
 [ext_resource type="Resource" uid="uid://sb245rbgw657" path="res://item/items/blue_book.tres" id="28_q56d0"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
