@@ -1,7 +1,8 @@
+#player.gd
 extends CharacterBody3D
 
 #this is use to signal to toggle_inventor to trigger
-signal toggle_inventory()
+signal toggle_cursor_interaction()
 
 @export var inventory_data: InventoryData
 @export var equip_inventory_data: InventoryDataEquip
@@ -15,6 +16,13 @@ var health: int = 5
 
 var look_rot: Vector2
 
+#to turn mouselook on and off
+var mouselook: bool = true
+var free_mouse_cursor: bool = false
+
+#var free_mouse_cursor: bool = false
+
+@onready var main: Node = $".."
 @onready var head: Camera3D = $Camera3D
 @onready var interact_ray:RayCast3D = $Camera3D/InteractRay
 
@@ -23,29 +31,40 @@ func _ready():
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+
+
 func _unhandled_input(event):
 	
-	#as far as I can tell, this is a part of the mouselook section
-	if event is InputEventMouseMotion: #this is looking for a mouse moving event as well as if the free_mouse_cursor is false.
-		print("mouselook is on")
+	print(event)
+	
+	if event is InputEventMouseMotion:
+		
+		#here we take the look rot variable, and give it's y and x value the event(the mouse movement)
+		#and then make it relative to x and y and mulitply it by 0.2.
+		#keep in mind, this is only setting up the variables. this is NOT where movement occurs(if
+		# that makes sense).
 		look_rot.y -= (event.relative.x * 0.2)
 		look_rot.x -= (event.relative.y * 0.2)
-		look_rot.x = clamp(look_rot.x, -80, 90)
+		look_rot.x = clamp(look_rot.x, -80, 90) #clamp keeps a value between a min and max value.
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
-		
-	#if you press "tab" it will "emit" the toggle_inventory signal(sends out the signal)
+	
+	#if you press "tab" it will "emit" the toggle_cursor_interaction signal(sends out the signal)
 	if Input.is_action_just_pressed("inventory"):
-		print("message  sent")
-		toggle_inventory.emit()
-		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		#free_mouse_cursor = 1
-	#elif Input.is_action_just_pressed("inventory") and free_mouse_cursor == 1:
-		#print("free mouse cursor is zero")
-		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		#free_mouse_cursor = 0
-		
+		if free_mouse_cursor == true:
+
+			free_mouse_cursor = false
+			mouselook = true
+
+			toggle_cursor_interaction.emit()
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+			free_mouse_cursor = true
+			mouselook = false
+
+			toggle_cursor_interaction.emit()
 		
 	if Input.is_action_just_pressed("interact"):
 		interact()
@@ -53,7 +72,7 @@ func _unhandled_input(event):
 func interact() -> void:
 	if interact_ray.is_colliding():
 		interact_ray.get_collider().player_interact()
-		print("we are interacting")
+
 
 func get_drop_position() -> Vector3:
 	var direction = -head.global_transform.basis.z
@@ -84,8 +103,12 @@ func _physics_process(delta: float) -> void:
  
 	move_and_slide()
 	
-	#this is also apart of the mouselook functionality
-	var plat_rot = get_platform_angular_velocity()
-	look_rot.y += rad_to_deg(plat_rot.y * delta)
-	head.rotation_degrees.x = look_rot.x
-	rotation_degrees.y = look_rot.y
+
+	
+	#this if condition is activated when mouselook is true.
+	if mouselook == true:
+
+		var plat_rot = get_platform_angular_velocity()
+		look_rot.y += rad_to_deg(plat_rot.y * delta)
+		head.rotation_degrees.x = look_rot.x
+		rotation_degrees.y = look_rot.y

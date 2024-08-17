@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://2pthxu7lkgi7"]
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://dl23pi6i4bmn"]
 
 [ext_resource type="Script" path="res://item/item_data_consumable.gd" id="1_5rgvv"]
 

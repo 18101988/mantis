@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b4mo58de1neb4"]
+[gd_scene load_steps=41 format=3 uid="uid://3vj4cjfq6tur"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -27,7 +27,7 @@
 [ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="23_f6w5e"]
 [ext_resource type="PackedScene" uid="uid://dg36vp5juvdv2" path="res://inventory/slot.tscn" id="25_sqt1s"]
 [ext_resource type="PackedScene" uid="uid://bg7mhq8niuedd" path="res://interactable/chest.tscn" id="26_bf662"]
-[ext_resource type="PackedScene" uid="uid://cl15au0seid0o" path="res://inventory/hot_bar_inventory.tscn" id="26_dsr2o"]
+[ext_resource type="PackedScene" uid="uid://cbauh4jrrd3fs" path="res://inventory/hot_bar_inventory.tscn" id="26_dsr2o"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="27_nvd02"]
 [ext_resource type="Resource" uid="uid://sb245rbgw657" path="res://item/items/blue_book.tres" id="28_q56d0"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
@@ -172,9 +172,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 script = ExtResource("21_icb5f")
 
 [node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("22_mdipm")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -189,6 +193,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="EquipInventory" parent="UI/InventoryInterface" instance=ExtResource("22_mdipm")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -206,12 +211,15 @@ grow_vertical = 1
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.546007
-anchor_top = 0.339506
+anchor_left = 0.575521
+anchor_top = 0.391975
 anchor_right = 0.575521
 anchor_bottom = 0.391975
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -516.0
+offset_top = -60.9998
+offset_right = -164.0
+offset_bottom = 257.0
+metadata/_edit_use_anchors_ = true
 
 [node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("25_sqt1s")]
 visible = false
@@ -224,10 +232,10 @@ offset_right = 102.0
 offset_bottom = 98.0
 
 [node name="HotBarInventory" parent="UI" instance=ExtResource("26_dsr2o")]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 142.0
-offset_bottom = 50.0
+offset_left = 516.0
+offset_top = 580.0
+offset_right = 648.0
+offset_bottom = 620.0
 
 [node name="Chest" parent="." instance=ExtResource("26_bf662")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.347, 0, 40.2058)

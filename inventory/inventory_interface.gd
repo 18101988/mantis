@@ -11,12 +11,20 @@ var external_inventory_owner
 @onready var external_inventory: PanelContainer = $ExternalInventory
 @onready var equip_inventory: PanelContainer = $EquipInventory
 
+
 func _physics_process(delta: float) -> void:
+
+#states that if the grabbed slot is visible, it will make the position of the grabbed slot
+# at the mouses position of the cursor.
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5, 5)
 		
+
+#if the external inventory owner and external inventory owners global position distance,
+#it will "force close"(not sure what that means.) needs more documentation.
 	if external_inventory_owner and external_inventory_owner.global_position.distance_to(PlayerManager.get_global_position()) > 4:
 		force_close.emit()
+
 func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)
 	player_inventory.set_inventory_data(inventory_data)
@@ -65,17 +73,17 @@ func update_grabbed_slot() -> void:
 		grabbed_slot.hide()
 
 
-func _on_gui_input(event):
-	if event is InputEventMouseButton and event.is_pressed() and grabbed_slot_data:
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				drop_slot_data.emit(grabbed_slot_data)
-				grabbed_slot_data = null
-			MOUSE_BUTTON_RIGHT:
-				drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
-				if grabbed_slot_data.quantity < 1:
-					grabbed_slot_data = null
-		update_grabbed_slot()
+#func _on_gui_input(event):
+#	if event is InputEventMouseButton and event.is_pressed() and grabbed_slot_data:
+#		match event.button_index:
+#			MOUSE_BUTTON_LEFT:
+#				drop_slot_data.emit(grabbed_slot_data)
+#				grabbed_slot_data = null
+#			MOUSE_BUTTON_RIGHT:
+#				drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
+#				if grabbed_slot_data.quantity < 1:
+#					grabbed_slot_data = null
+#		update_grabbed_slot()
 
 
 func _on_visibility_changed():
