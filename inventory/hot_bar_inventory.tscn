@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbauh4jrrd3fs"]
+[gd_scene load_steps=3 format=3 uid="uid://cl15au0seid0o"]
 
 [ext_resource type="Script" path="res://inventory/hot_bar_inventory.gd" id="1_aobmr"]
 
