@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://3vj4cjfq6tur"]
+[gd_scene load_steps=45 format=3 uid="uid://3vj4cjfq6tur"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://bg5frntbe6e8b" path="res://assets/BuildingsExt/School/school.glb" id="17_7cxw3"]
 [ext_resource type="PackedScene" uid="uid://c8g8briqm1qee" path="res://assets/BuildingsExt/Lab/LabFinal.glb" id="18_tmfqr"]
 [ext_resource type="PackedScene" uid="uid://c86eijf03jm1p" path="res://assets/Geography/Town_Geo_No_Buildings.glb" id="19_ujqe6"]
-[ext_resource type="Texture2D" uid="uid://bhs1un2ry5mk0" path="res://assets/sky_draft_1.png" id="20_u8nd4"]
 [ext_resource type="PackedScene" uid="uid://b5srie1k5oyfm" path="res://player/player.tscn" id="21_4q6k6"]
 [ext_resource type="Script" path="res://inventory/inventory_interface.gd" id="21_icb5f"]
 [ext_resource type="Resource" uid="uid://ncjfjmrktct1" path="res://text_inv.tres" id="22_hph0q"]
@@ -34,17 +33,63 @@
 [ext_resource type="PackedScene" uid="uid://cvxn6kp8jrfnf" path="res://item/pick_up/pick_up.tscn" id="30_ppoir"]
 [ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/apple.tres" id="31_v1ut6"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hwhsh"]
-panorama = ExtResource("20_u8nd4")
+[sub_resource type="Gradient" id="Gradient_pvmes"]
+colors = PackedColorArray(0.385967, 0.297841, 0.325766, 1, 0.0814286, 0.0660092, 0.0730022, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t1ut8"]
+gradient = SubResource("Gradient_pvmes")
+fill_from = Vector2(0.994505, 0.571429)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_0f2i0"]
+night_sky = SubResource("GradientTexture2D_t1ut8")
 
 [sub_resource type="Sky" id="Sky_5m1p6"]
-sky_material = SubResource("PanoramaSkyMaterial_hwhsh")
+sky_material = SubResource("PhysicalSkyMaterial_0f2i0")
 
 [sub_resource type="Environment" id="Environment_uxyh3"]
 background_mode = 2
 sky = SubResource("Sky_5m1p6")
 tonemap_mode = 2
-glow_enabled = true
+fog_aerial_perspective = 0.5
+fog_sky_affect = 0.2
+
+[sub_resource type="Animation" id="Animation_8ia6i"]
+resource_name = "DayNightCycle"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.20654e-09, -2.96182, -2.25846), Vector3(6.28319, -2.96182, -2.25846)]
+}
+
+[sub_resource type="Animation" id="Animation_cu2qx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.20654e-09, -2.96182, -2.25846)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8wnu"]
+_data = {
+"DayNightCycle": SubResource("Animation_8ia6i"),
+"RESET": SubResource("Animation_cu2qx")
+}
 
 [sub_resource type="Resource" id="Resource_3hvi6"]
 script = ExtResource("23_f6w5e")
@@ -145,7 +190,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 13.3494, 0)
 environment = SubResource("Environment_uxyh3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(0.121862, -0.154537, -0.0356093, -0.153552, -0.126206, 0.0222204, -0.0396398, 0.0138004, -0.195546, 3.51963, 9.46669, -10.9961)
+transform = Transform3D(0.624502, -0.760281, -0.178802, -0.772734, -0.63473, -2.20654e-09, -0.113491, 0.138167, -0.983885, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 light_energy = 2.205
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.69
@@ -153,6 +198,12 @@ shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 1.486
 sky_mode = 1
+
+[node name="DayNightCycle" type="AnimationPlayer" parent="Environment"]
+libraries = {
+"": SubResource("AnimationLibrary_j8wnu")
+}
+autoplay = "DayNightCycle"
 
 [node name="Specimans" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.07, 0)
