@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://barvulswysmwd"]
+
+[ext_resource type="PackedScene" uid="uid://djh3q31xdxp46" path="res://scenes/hotel_interiors_no_extra2.glb" id="1_p8rbp"]
+
+[node name="Hotel" type="Node3D"]
+
+[node name="hotel_interiors_no_extra2" parent="." instance=ExtResource("1_p8rbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65864, 0, 9.51468)

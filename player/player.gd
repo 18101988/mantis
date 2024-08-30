@@ -7,7 +7,7 @@ signal toggle_cursor_interaction()
 @export var inventory_data: InventoryData
 @export var equip_inventory_data: InventoryDataEquip
 
-const SPEED = 5.0
+const SPEED = 20.0
 const JUMP_VELOCITY = 4.5
  
 # Get the gravity from the project settings to be synced with RigidBody nodes.

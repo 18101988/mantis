@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://3vj4cjfq6tur"]
+[gd_scene load_steps=48 format=3 uid="uid://3vj4cjfq6tur"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -32,6 +32,14 @@
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
 [ext_resource type="PackedScene" uid="uid://cvxn6kp8jrfnf" path="res://item/pick_up/pick_up.tscn" id="30_ppoir"]
 [ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/apple.tres" id="31_v1ut6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swm8d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a32wm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1pn4"]
+vertex_color_is_srgb = true
+albedo_color = Color(1, 0.109804, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_pvmes"]
 colors = PackedColorArray(0.385967, 0.297841, 0.325766, 1, 0.0814286, 0.0660092, 0.0730022, 1)
@@ -117,10 +125,6 @@ _data = {
 "RESET": SubResource("Animation_cu2qx")
 }
 
-[sub_resource type="Resource" id="Resource_3hvi6"]
-script = ExtResource("23_f6w5e")
-slot_datas = Array[ExtResource("29_a8xmc")]([null])
-
 [sub_resource type="Resource" id="Resource_k6lh7"]
 script = ExtResource("29_a8xmc")
 item_data = ExtResource("28_q56d0")
@@ -135,8 +139,26 @@ script = ExtResource("29_a8xmc")
 item_data = ExtResource("31_v1ut6")
 quantity = 1
 
+[sub_resource type="Resource" id="Resource_3hvi6"]
+script = ExtResource("23_f6w5e")
+slot_datas = Array[ExtResource("29_a8xmc")]([null])
+
 [node name="Main" type="Node"]
 script = ExtResource("1_a08c1")
+
+[node name="BuildingInt" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="BuildingInt"]
+transform = Transform3D(0.89273, 0, 0, 0, 0.779996, 0, 0, 0, 1, 139.332, 1.43239, 96.7516)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BuildingInt/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 3.55399, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_swm8d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BuildingInt/Area3D/CollisionShape3D"]
+transform = Transform3D(0.216899, 0, 0, 0, 0.937753, 0, 0, 0, 0.764853, 0.555183, -0.0361819, 0)
+mesh = SubResource("BoxMesh_a32wm")
+surface_material_override/0 = SubResource("StandardMaterial3D_g1pn4")
 
 [node name="BuildingsExt" type="Node3D" parent="."]
 
@@ -216,7 +238,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 13.3494, 0)
 environment = SubResource("Environment_uxyh3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(0.624502, -0.760281, -0.178802, -0.772734, -0.63473, -2.20654e-09, -0.113491, 0.138167, -0.983885, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(0.624505, -0.760278, -0.178806, -0.772731, -0.634733, -2.20654e-09, -0.113494, 0.138169, -0.983884, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 light_energy = 2.205
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.69
@@ -233,11 +255,6 @@ autoplay = "DayNightCycle"
 
 [node name="Specimans" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.07, 0)
-
-[node name="Player" parent="." instance=ExtResource("21_4q6k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.396, 0, 43.0746)
-inventory_data = ExtResource("22_hph0q")
-equip_inventory_data = SubResource("Resource_3hvi6")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -313,6 +330,7 @@ offset_left = 516.0
 offset_top = 580.0
 offset_right = 648.0
 offset_bottom = 620.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Chest" parent="." instance=ExtResource("26_bf662")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.347, 0, 40.2058)
@@ -321,6 +339,11 @@ inventory_data = SubResource("Resource_1rbgy")
 [node name="PickUp" parent="." instance=ExtResource("30_ppoir")]
 transform = Transform3D(0.209704, 0, 0, 0, 0.308421, 0, 0, 0, 0.406117, 125.505, 1.24359, 40.6942)
 slot_data = SubResource("Resource_v5aln")
+
+[node name="Player" parent="." instance=ExtResource("21_4q6k6")]
+transform = Transform3D(0.0456944, 0, -0.998955, 0, 1, 0, 0.998955, 0, 0.0456944, 132.05, -0.0131176, 96.4839)
+inventory_data = ExtResource("22_hph0q")
+equip_inventory_data = SubResource("Resource_3hvi6")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
