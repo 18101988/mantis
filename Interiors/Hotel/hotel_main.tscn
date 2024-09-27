@@ -1,5 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://0o8fb6tlp7n7"]
+[gd_scene load_steps=4 format=3 uid="uid://0o8fb6tlp7n7"]
 
 [ext_resource type="PackedScene" uid="uid://8tve8wmxuo3w" path="res://Interiors/Hotel/hotel_interiors_no_extra_3.glb" id="1_oh1vx"]
+[ext_resource type="PackedScene" uid="uid://b5srie1k5oyfm" path="res://player/player.tscn" id="2_t28j8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8k3kf"]
 
 [node name="hotel_interiors_no_extra_3" instance=ExtResource("1_oh1vx")]
+
+[node name="Hotel_Entrance" type="Area3D" parent="." index="10"]
+transform = Transform3D(1.035, 0, 0, 0, 1.035, 0, 0, 0, 0.2, 0.919, 0, 6.4432)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hotel_Entrance" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.427724, 0.90803, 5.92038)
+shape = SubResource("BoxShape3D_8k3kf")
+
+[node name="Player" parent="." index="11" instance=ExtResource("2_t28j8")]
+transform = Transform3D(0.786389, 0, 0, 0, 0.737007, 0, 0, 0, 1, 1.35121, 0.0931532, 6.82658)
