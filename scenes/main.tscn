@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://3vj4cjfq6tur"]
+[gd_scene load_steps=47 format=3 uid="uid://3vj4cjfq6tur"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_a08c1"]
 [ext_resource type="PackedScene" uid="uid://nwnx6dwitids" path="res://assets/BuildingsExt/DownTown/general_shop_1.glb" id="2_aufub"]
@@ -32,6 +32,8 @@
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="29_a8xmc"]
 [ext_resource type="PackedScene" uid="uid://cvxn6kp8jrfnf" path="res://item/pick_up/pick_up.tscn" id="30_ppoir"]
 [ext_resource type="Resource" uid="uid://cavmh7t8ib2kv" path="res://item/items/apple.tres" id="31_v1ut6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ak3l"]
 
 [sub_resource type="Gradient" id="Gradient_pvmes"]
 colors = PackedColorArray(0.385967, 0.297841, 0.325766, 1, 0.0814286, 0.0660092, 0.0730022, 1)
@@ -117,10 +119,6 @@ _data = {
 "RESET": SubResource("Animation_cu2qx")
 }
 
-[sub_resource type="Resource" id="Resource_3hvi6"]
-script = ExtResource("23_f6w5e")
-slot_datas = Array[ExtResource("29_a8xmc")]([null])
-
 [sub_resource type="Resource" id="Resource_k6lh7"]
 script = ExtResource("29_a8xmc")
 item_data = ExtResource("28_q56d0")
@@ -135,10 +133,17 @@ script = ExtResource("29_a8xmc")
 item_data = ExtResource("31_v1ut6")
 quantity = 1
 
-[node name="Main" type="Node"]
+[sub_resource type="Resource" id="Resource_3hvi6"]
+script = ExtResource("23_f6w5e")
+slot_datas = Array[ExtResource("29_a8xmc")]([null])
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5f1r7"]
+
+[node name="Exterior" type="Node"]
 script = ExtResource("1_a08c1")
 
 [node name="BuildingsExt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.894, 0, -98.2296)
 
 [node name="DownTown" type="Node3D" parent="BuildingsExt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.043, 0, 115.55)
@@ -162,13 +167,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0,
 transform = Transform3D(1.13247e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, 1.13247e-07, 23.3649, 0, 20.9185)
 
 [node name="hotel_05_28_24_linked_to_town_exterior" parent="BuildingsExt/DownTown" instance=ExtResource("8_g485v")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23.2718, 0, -24.4487)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23.2718, 0.00146484, -24.4487)
 
 [node name="Grocery" type="Node3D" parent="BuildingsExt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.043, 0, 115.55)
 
 [node name="GroceryStore_complex_no_collision" parent="BuildingsExt/Grocery" instance=ExtResource("9_tcib5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.993, 0.005, -139.833)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.993, 0.0372789, -139.833)
 
 [node name="motel_removed_piecesblend" parent="BuildingsExt/Grocery" instance=ExtResource("10_ptg5e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.776, 0.005, -111.532)
@@ -192,21 +197,23 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -66.104, -0.11121, 0)
 transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, -59.8529, -0.000520349, -9)
 
 [node name="PowerPlant" parent="BuildingsExt" instance=ExtResource("16_f1elq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.918, 0.005, 222.031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.918, 0.192063, 222.031)
 
 [node name="school" parent="BuildingsExt" instance=ExtResource("17_7cxw3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 69.9684, 0.0729849, -54.4187)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 69.9684, 0.102965, -54.4187)
 
 [node name="LabFinal" parent="BuildingsExt" instance=ExtResource("18_tmfqr")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -393.581, 38.5679, -83.8659)
 
 [node name="Infrastructure" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.894, 0, -98.2296)
 
 [node name="Geography" type="Node3D" parent="."]
-transform = Transform3D(7.88, 0, 0, 0, 7.88, 0, 0, 0, 7.88, 0, 12.07, 0)
+transform = Transform3D(7.88, 0, 0, 0, 7.88, 0, 0, 0, 7.88, -122.894, 12.07, -98.2296)
 
 [node name="town_geo" parent="Geography" instance=ExtResource("19_ujqe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.922, -1.53154, 2.286)
+mesh = SubResource("BoxMesh_1ak3l")
 skeleton = NodePath("../..")
 
 [node name="Environment" type="Node3D" parent="."]
@@ -216,7 +223,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 13.3494, 0)
 environment = SubResource("Environment_uxyh3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(0.624502, -0.760281, -0.178802, -0.772734, -0.63473, -2.20654e-09, -0.113491, 0.138167, -0.983885, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(0.624505, -0.760278, -0.178806, -0.772731, -0.634733, -2.20654e-09, -0.113494, 0.138169, -0.983884, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 light_energy = 2.205
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.69
@@ -234,12 +241,8 @@ autoplay = "DayNightCycle"
 [node name="Specimans" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.07, 0)
 
-[node name="Player" parent="." instance=ExtResource("21_4q6k6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.396, 0, 43.0746)
-inventory_data = ExtResource("22_hph0q")
-equip_inventory_data = SubResource("Resource_3hvi6")
-
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="InventoryInterface" type="Control" parent="UI"]
 visible = false
@@ -313,15 +316,29 @@ offset_left = 516.0
 offset_top = 580.0
 offset_right = 648.0
 offset_bottom = 620.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Chest" parent="." instance=ExtResource("26_bf662")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.347, 0, 40.2058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118607, 0, -13.9291)
 inventory_data = SubResource("Resource_1rbgy")
 
 [node name="PickUp" parent="." instance=ExtResource("30_ppoir")]
 transform = Transform3D(0.209704, 0, 0, 0, 0.308421, 0, 0, 0, 0.406117, 125.505, 1.24359, 40.6942)
 slot_data = SubResource("Resource_v5aln")
 
+[node name="Player" parent="." instance=ExtResource("21_4q6k6")]
+transform = Transform3D(0.0456944, 0, -0.998955, 0, 1, 0, 0.998955, 0, 0.0456944, 1.39248, 0.00146484, 2.65349)
+inventory_data = ExtResource("22_hph0q")
+equip_inventory_data = SubResource("Resource_3hvi6")
+
+[node name="Front_Door_Hotel_Enter" type="Area3D" parent="."]
+transform = Transform3D(7.44, 0, 0, 0, 7.44, 0, 0, 0, 7.44, 14, 0, -1.03179)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Front_Door_Hotel_Enter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67871, 0)
+shape = SubResource("BoxShape3D_5f1r7")
+
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
 [connection signal="visibility_changed" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_visibility_changed"]
+[connection signal="body_entered" from="Front_Door_Hotel_Enter" to="Player" method="_on_front_door_hotel_enter_body_entered"]

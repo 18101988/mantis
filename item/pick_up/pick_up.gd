@@ -5,7 +5,7 @@ extends RigidBody3D
 @onready var sprite_3d: Sprite3D = $Sprite3D
 
 func _ready() -> void:
-	sprite_3d.texture = slot_data.item_data.texture
+		sprite_3d.texture = slot_data.item_data.texture
 	
 
 func _physics_process(delta: float) -> void:

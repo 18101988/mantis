@@ -7,7 +7,7 @@ signal toggle_cursor_interaction()
 @export var inventory_data: InventoryData
 @export var equip_inventory_data: InventoryDataEquip
 
-const SPEED = 5.0
+const SPEED = 20.0
 const JUMP_VELOCITY = 4.5
  
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -35,7 +35,7 @@ func _ready():
 
 func _unhandled_input(event):
 	
-	print(event)
+	#print(event)
 	
 	if event is InputEventMouseMotion:
 		
@@ -83,6 +83,7 @@ func heal(heal_value: int) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
  
@@ -112,3 +113,13 @@ func _physics_process(delta: float) -> void:
 		look_rot.y += rad_to_deg(plat_rot.y * delta)
 		head.rotation_degrees.x = look_rot.x
 		rotation_degrees.y = look_rot.y
+
+	#get_tree().change_scene_to_file("res://Interiors/Hotel/hotel_main.tscn")
+ # Replace with function body.
+
+
+func _on_front_door_hotel_enter_body_entered(body):
+	print("i have moved")
+	#get_tree().change_scene_to_file("res://test_stage.tscn")
+	get_tree().change_scene_to_file("res://assets/hotel_interiors_no_extra_3.glb")
+	#pass

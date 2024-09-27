@@ -15,7 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_yjqap")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1.26437, 0, 0, 0, 1, 0, 0, 0, 1.8119, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_3jrf1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -26,21 +26,22 @@ target_position = Vector3(0, 0, -2.5)
 collision_mask = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -305.0
-offset_top = 180.0
-offset_right = -301.0
-offset_bottom = 184.0
+offset_left = -11.0
+offset_top = -27.0
+offset_right = -10.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(222.286, 36.2623)
+scale = Vector2(9.61148, 10.5152)
+size_flags_horizontal = 4
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
+color = Color(0.235294, 0.807843, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
